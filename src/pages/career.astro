@@ -1,0 +1,322 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const careers = [
+  {
+    period: "3rd Year (Current)",
+    role: "Contract Developer",
+    company: "axcira",
+    description:
+      "Joined the axcira team to work on contract development projects. Mainly focusing on creating modern web applications.",
+    tags: ["Kotlin", "Ktor", "Exposed", "Go", "FastAPI", "Hono", "Tanstack"],
+    highlight: true,
+  },
+  {
+    period: "2nd Year",
+    role: "Web Developer",
+    company: "Industry-Academia Collaboration",
+    description:
+      "Participated in an industry-academia collaboration project and contributed to the development of multiple applications. Additionally, built corporate websites for several companies.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Astro"],
+    highlight: false,
+  },
+  {
+    period: "After High School",
+    role: "Self-taught Developer",
+    company: "Personal Project",
+    description:
+      "Independently developed an app to optimize studying using Python and Flask. This experience sparked my deep fascination with programming.",
+    tags: ["Python", "Flask", "Django", "JavaScript"],
+    highlight: false,
+  },
+];
+
+const education = [
+  {
+    period: "Current",
+    school: "School in Kyoto",
+    description:
+      "Enrolled in a school in Kyoto, primarily studying web application development and computer science.",
+  },
+  {
+    period: "Until High School Graduation",
+    school: "High School",
+    description:
+      "Dedicated my time to playing soccer throughout my high school years.",
+  },
+];
+---
+
+<BaseLayout title="Career" description="Yusuke Tamura's Career and Experience">
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label reveal">Career</span>
+      <h1 class="section-title reveal">Career & Experience</h1>
+      <p class="section-subtitle reveal">
+        Here is a look at my background, from my early days of programming to my
+        current role as a web developer.
+      </p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section timeline-section">
+    <div class="container">
+      <span class="section-label reveal">Experience</span>
+      <h2 class="section-title reveal">Work Experience</h2>
+
+      <div class="timeline">
+        {
+          careers.map((career, index) => (
+            <div
+              class:list={[
+                "timeline-item reveal",
+                { "timeline-highlight": career.highlight },
+              ]}
+            >
+              <div class="timeline-marker">
+                <div class="marker-dot" />
+                {index < careers.length - 1 && <div class="marker-line" />}
+              </div>
+              <div class="timeline-content glass-card">
+                <div class="timeline-header">
+                  <span class="timeline-period">{career.period}</span>
+                  {career.highlight && (
+                    <span class="current-badge">Current</span>
+                  )}
+                </div>
+                <h3 class="timeline-role">{career.role}</h3>
+                <p class="timeline-company">{career.company}</p>
+                <p class="timeline-desc">{career.description}</p>
+                <div class="timeline-tags">
+                  {career.tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section education-section">
+    <div class="container">
+      <span class="section-label reveal">Education</span>
+      <h2 class="section-title reveal">Education</h2>
+
+      <div class="education-grid">
+        {
+          education.map((edu) => (
+            <div class="education-card glass-card reveal">
+              <div class="edu-icon">🎓</div>
+              <span class="timeline-period">{edu.period}</span>
+              <h3 class="edu-school">{edu.school}</h3>
+              <p class="edu-desc">{edu.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  /* ============================================
+     Timeline
+     ============================================ */
+  .timeline {
+    margin-top: 48px;
+    max-width: 800px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 32px;
+  }
+
+  .marker-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-bg-secondary);
+    border: 3px solid var(--color-accent-1);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-highlight .marker-dot {
+    background: var(--color-accent-1);
+    box-shadow: 0 0 12px rgba(108, 92, 231, 0.25);
+  }
+
+  .marker-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--color-accent-1), transparent);
+    margin-top: 4px;
+  }
+
+  .timeline-content {
+    flex: 1;
+    margin-bottom: 32px;
+  }
+
+  .timeline-highlight .timeline-content {
+    border-color: rgba(108, 92, 231, 0.15);
+    background: rgba(108, 92, 231, 0.03);
+  }
+
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .timeline-period {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent-2);
+    letter-spacing: 0.02em;
+  }
+
+  .current-badge {
+    padding: 3px 12px;
+    background: rgba(108, 92, 231, 0.15);
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-accent-1);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .timeline-role {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--color-text-primary);
+  }
+
+  .timeline-company {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+  }
+
+  .timeline-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+
+  .timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ============================================
+     Education
+     ============================================ */
+  .education-grid {
+    margin-top: 32px;
+    max-width: 600px;
+  }
+
+  .education-card {
+    text-align: left;
+  }
+
+  .edu-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .edu-school {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 10px 0;
+  }
+
+  .edu-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  /* ============================================
+     Values
+     ============================================ */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .value-card {
+    padding: 40px 32px;
+  }
+
+  .value-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: var(--color-accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.4;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  .value-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 12px;
+  }
+
+  .value-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  /* ============================================
+     Responsive
+     ============================================ */
+  @media (max-width: 768px) {
+    .timeline-marker {
+      display: none;
+    }
+
+    .timeline-item {
+      gap: 0;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

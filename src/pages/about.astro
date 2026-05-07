@@ -1,0 +1,29 @@
+---
+// レイアウトをインポート
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// 変数定義（APIからデータを取ってきたりもできる）
+const pageTitle = "私たちについて";
+const skills = ["React", "Astro", "Next.js", "TypeScript"];
+const happy = true;
+---
+
+<BaseLayout title={pageTitle}>
+  <h2>YGautoのプロジェクト紹介</h2>
+  <p>
+    現在はAstroを使って、高速でモダンなWebサイトを構築する練習をしています。
+  </p>
+
+  {happy && <p>新しい技術を学ぶのは楽しいですね！</p>}
+
+  <h3>使用技術スタック</h3>
+  <ul>
+    {skills.map((skill) => <li class="skill-item">{skill}</li>)}
+  </ul>
+</BaseLayout>
+
+<style>
+  /* このページだけに適用されるスタイル（自動でスコープ化される） */
+  h2 { color: #333; }
+  .skill-item { font-weight: bold; color: navy; }
+</style>

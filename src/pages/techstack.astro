@@ -1,0 +1,376 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const techCategories = [
+  {
+    title: "Frontend",
+    icon: "🎨",
+    skills: [
+      { name: "React", level: 95, color: "#61DAFB" },
+      { name: "TypeScript", level: 95, color: "#3178C6" },
+      { name: "Astro", level: 40, color: "#FF5D01" },
+      { name: "Vue", level: 40, color: "#4FC08D" },
+    ],
+  },
+  {
+    title: "CSS",
+    icon: "✨",
+    skills: [
+      { name: "Tailwind CSS", level: 90, color: "#06B6D4" },
+    ],
+  },
+  {
+    title: "Backend",
+    icon: "⚙️",
+    skills: [
+      { name: "Python", level: 90, color: "#3776AB" },
+      { name: "FastAPI", level: 90, color: "#009688" },
+      { name: "Kotlin", level: 80, color: "#7F52FF" },
+      { name: "Ktor", level: 80, color: "#087CFA" },
+      { name: "Exposed", level: 80, color: "#333333" },
+      { name: "Node.js", level: 70, color: "#339933" },
+      { name: "Prisma", level: 70, color: "#2D3748" },
+      { name: "Go", level: 60, color: "#00ADD8" },
+    ],
+  },
+  {
+    title: "Tools",
+    icon: "🛠️",
+    skills: [
+      { name: "GitHub", level: 80, color: "#181717" },
+      { name: "Neovim", level: 80, color: "#57A143" },
+      { name: "Docker", level: 70, color: "#2496ED" },
+      { name: "Figma", level: 60, color: "#F24E1E" },
+    ],
+  },
+];
+
+const learningNow = [
+  { name: "Rust", icon: "🦀", desc: "WebAssemblyに興味があり学習中" },
+  { name: "Three.js", icon: "🌐", desc: "3DビジュアルのWeb表現に挑戦中" },
+  { name: "GraphQL", icon: "◆", desc: "APIの効率的な設計パターンを学習中" },
+];
+---
+
+<BaseLayout title="Tech Stack" description="田村祐介の技術スタック・スキルセット">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label reveal">Tech Stack</span>
+      <h1 class="section-title reveal">技術スタック</h1>
+      <p class="section-subtitle reveal">
+        日々の開発で使用している技術や、
+        これから学んでいきたい技術をご紹介します。
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Grid -->
+  <section class="section skills-section">
+    <div class="container">
+      <div class="skills-grid">
+        {techCategories.map((category) => (
+          <div class="skill-category glass-card reveal">
+            <div class="category-header">
+              <span class="category-icon">{category.icon}</span>
+              <h2 class="category-title">{category.title}</h2>
+            </div>
+            <div class="skill-list">
+              {category.skills.map((skill) => (
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">{skill.name}</span>
+                    <span class="skill-level">{skill.level}%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-progress"
+                      style={`--progress: ${skill.level}%; --skill-color: ${skill.color};`}
+                    >
+                      <div class="skill-glow"></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Skill Cloud -->
+  <section class="section cloud-section">
+    <div class="container">
+      <span class="section-label reveal">Overview</span>
+      <h2 class="section-title reveal">スキル一覧</h2>
+
+      <div class="skill-cloud reveal">
+        {techCategories.flatMap(cat => cat.skills).map((skill, i) => (
+          <span
+            class="cloud-tag"
+            style={`--delay: ${i * 0.05}s;`}
+          >
+            {skill.name}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Currently Learning -->
+  <section class="section learning-section">
+    <div class="container">
+      <span class="section-label reveal">Currently Learning</span>
+      <h2 class="section-title reveal">学習中の技術</h2>
+      <p class="section-subtitle reveal">
+        常にスキルアップを目指し、新しい技術にも積極的にチャレンジしています。
+      </p>
+
+      <div class="learning-grid">
+        {learningNow.map((item) => (
+          <div class="learning-card glass-card reveal">
+            <div class="learning-icon">{item.icon}</div>
+            <h3 class="learning-name">{item.name}</h3>
+            <p class="learning-desc">{item.desc}</p>
+            <div class="learning-status">
+              <span class="status-dot"></span>
+              Learning...
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style is:global>
+  /* ============================================
+     Skills Grid
+     ============================================ */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .skill-category {
+    padding: 36px;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .category-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .category-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .skill-level {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .skill-bar {
+    height: 6px;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .skill-progress {
+    height: 100%;
+    width: var(--progress);
+    background: linear-gradient(90deg, var(--skill-color), rgba(255, 255, 255, 0.6));
+    border-radius: 3px;
+    position: relative;
+    animation: progressIn 1.2s ease-out forwards;
+    transform-origin: left;
+  }
+
+  .skill-glow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--skill-color);
+    border-radius: 50%;
+    filter: blur(4px);
+    opacity: 0.8;
+  }
+
+  @keyframes progressIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* ============================================
+     Skill Cloud
+     ============================================ */
+  .skill-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+    justify-content: center;
+  }
+
+  .cloud-tag {
+    padding: 10px 22px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+    cursor: default;
+    animation: fadeInUp 0.5s ease-out both;
+    animation-delay: var(--delay);
+  }
+
+  .cloud-tag:hover {
+    background: rgba(108, 92, 231, 0.08);
+    border-color: rgba(108, 92, 231, 0.25);
+    color: var(--color-accent-1);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 20px rgba(108, 92, 231, 0.12);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ============================================
+     Currently Learning
+     ============================================ */
+  .learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .learning-card {
+    text-align: center;
+    padding: 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .learning-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(232, 67, 147, 0.04), rgba(108, 92, 231, 0.04));
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+  }
+
+  .learning-card:hover::before {
+    opacity: 1;
+  }
+
+  .learning-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .learning-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 10px;
+  }
+
+  .learning-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .learning-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--color-accent-3);
+    font-weight: 500;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent-3);
+    display: inline-block;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ============================================
+     Responsive
+     ============================================ */
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .learning-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

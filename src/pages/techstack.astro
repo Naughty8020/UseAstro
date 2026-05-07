@@ -46,22 +46,22 @@ const techCategories = [
 ];
 
 const learningNow = [
-  { name: "Rust", icon: "🦀", desc: "WebAssemblyに興味があり学習中" },
-  { name: "Three.js", icon: "🌐", desc: "3DビジュアルのWeb表現に挑戦中" },
-  { name: "GraphQL", icon: "◆", desc: "APIの効率的な設計パターンを学習中" },
+  { name: "Rust", icon: "🦀", desc: "Interested in WebAssembly and currently learning it." },
+  { name: "Three.js", icon: "🌐", desc: "Challenging myself with 3D visual expressions on the web." },
+  { name: "GraphQL", icon: "◆", desc: "Learning efficient API design patterns." },
 ];
 ---
 
-<BaseLayout title="Tech Stack" description="田村祐介の技術スタック・スキルセット">
+<BaseLayout title="Tech Stack" description="Yusuke Tamura's Tech Stack and Skill Set">
 
   <!-- Hero -->
   <section class="page-hero">
     <div class="container">
       <span class="section-label reveal">Tech Stack</span>
-      <h1 class="section-title reveal">技術スタック</h1>
+      <h1 class="section-title reveal">Tech Stack</h1>
       <p class="section-subtitle reveal">
-        日々の開発で使用している技術や、
-        これから学んでいきたい技術をご紹介します。
+        Here are the technologies I use in my daily development,
+        as well as those I am currently eager to learn.
       </p>
     </div>
   </section>
@@ -104,7 +104,7 @@ const learningNow = [
   <section class="section cloud-section">
     <div class="container">
       <span class="section-label reveal">Overview</span>
-      <h2 class="section-title reveal">スキル一覧</h2>
+      <h2 class="section-title reveal">Skills Overview</h2>
 
       <div class="skill-cloud reveal">
         {techCategories.flatMap(cat => cat.skills).map((skill, i) => (
@@ -123,9 +123,9 @@ const learningNow = [
   <section class="section learning-section">
     <div class="container">
       <span class="section-label reveal">Currently Learning</span>
-      <h2 class="section-title reveal">学習中の技術</h2>
+      <h2 class="section-title reveal">Currently Learning</h2>
       <p class="section-subtitle reveal">
-        常にスキルアップを目指し、新しい技術にも積極的にチャレンジしています。
+        I constantly aim to improve my skills and actively challenge myself with new technologies.
       </p>
 
       <div class="learning-grid">

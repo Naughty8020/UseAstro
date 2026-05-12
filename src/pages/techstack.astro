@@ -46,9 +46,9 @@ const techCategories = [
 ];
 
 const learningNow = [
-  { name: "Rust", icon: "🦀", desc: "Interested in WebAssembly and currently learning it." },
-  { name: "Three.js", icon: "🌐", desc: "Challenging myself with 3D visual expressions on the web." },
-  { name: "GraphQL", icon: "◆", desc: "Learning efficient API design patterns." },
+  { name: "Rust", icon: "🦀", desc: { en: "Interested in WebAssembly and currently learning it.", ja: "WebAssemblyに関心があり、現在学習を進めています。" } },
+  { name: "Three.js", icon: "🌐", desc: { en: "Challenging myself with 3D visual expressions on the web.", ja: "Web上での3D表現やリッチなビジュアル表現に挑戦しています。" } },
+  { name: "GraphQL", icon: "◆", desc: { en: "Learning efficient API design patterns.", ja: "効率的なAPI設計パターンとして学習中です。" } },
 ];
 ---
 
@@ -57,11 +57,22 @@ const learningNow = [
   <!-- Hero -->
   <section class="page-hero">
     <div class="container">
-      <span class="section-label reveal">Tech Stack</span>
-      <h1 class="section-title reveal">Tech Stack</h1>
+      <span class="section-label reveal">
+        <span class="lang-en">Tech Stack</span>
+        <span class="lang-ja">スキル</span>
+      </span>
+      <h1 class="section-title reveal">
+        <span class="lang-en">Tech Stack</span>
+        <span class="lang-ja">技術スタック</span>
+      </h1>
       <p class="section-subtitle reveal">
-        Here are the technologies I use in my daily development,
-        as well as those I am currently eager to learn.
+        <span class="lang-en">
+          Here are the technologies I use in my daily development,
+          as well as those I am currently eager to learn.
+        </span>
+        <span class="lang-ja">
+          日々の開発で使用している技術や、現在意欲的に学んでいる技術をご紹介します。
+        </span>
       </p>
     </div>
   </section>
@@ -103,8 +114,14 @@ const learningNow = [
   <!-- Skill Cloud -->
   <section class="section cloud-section">
     <div class="container">
-      <span class="section-label reveal">Overview</span>
-      <h2 class="section-title reveal">Skills Overview</h2>
+      <span class="section-label reveal">
+        <span class="lang-en">Overview</span>
+        <span class="lang-ja">概要</span>
+      </span>
+      <h2 class="section-title reveal">
+        <span class="lang-en">Skills Overview</span>
+        <span class="lang-ja">スキル一覧</span>
+      </h2>
 
       <div class="skill-cloud reveal">
         {techCategories.flatMap(cat => cat.skills).map((skill, i) => (
@@ -122,10 +139,21 @@ const learningNow = [
   <!-- Currently Learning -->
   <section class="section learning-section">
     <div class="container">
-      <span class="section-label reveal">Currently Learning</span>
-      <h2 class="section-title reveal">Currently Learning</h2>
+      <span class="section-label reveal">
+        <span class="lang-en">Currently Learning</span>
+        <span class="lang-ja">学習中の技術</span>
+      </span>
+      <h2 class="section-title reveal">
+        <span class="lang-en">Currently Learning</span>
+        <span class="lang-ja">現在学習中の技術</span>
+      </h2>
       <p class="section-subtitle reveal">
-        I constantly aim to improve my skills and actively challenge myself with new technologies.
+        <span class="lang-en">
+          I constantly aim to improve my skills and actively challenge myself with new technologies.
+        </span>
+        <span class="lang-ja">
+          常にスキルアップを目指し、新しい技術にも積極的に挑戦しています。
+        </span>
       </p>
 
       <div class="learning-grid">
@@ -133,10 +161,14 @@ const learningNow = [
           <div class="learning-card glass-card reveal">
             <div class="learning-icon">{item.icon}</div>
             <h3 class="learning-name">{item.name}</h3>
-            <p class="learning-desc">{item.desc}</p>
+            <p class="learning-desc">
+              <span class="lang-en">{item.desc.en}</span>
+              <span class="lang-ja">{item.desc.ja}</span>
+            </p>
             <div class="learning-status">
               <span class="status-dot"></span>
-              Learning...
+              <span class="lang-en">Learning...</span>
+              <span class="lang-ja">学習中</span>
             </div>
           </div>
         ))}

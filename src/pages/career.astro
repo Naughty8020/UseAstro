@@ -3,29 +3,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const careers = [
   {
-    period: "3rd Year (Current)",
-    role: "Contract Developer",
+    period: { en: "3rd Year (Current)", ja: "大学3年 (現在)" },
+    role: { en: "Contract Developer", ja: "受託開発エンジニア" },
     company: "axcira",
-    description:
-      "Joined the axcira team to work on contract development projects. Mainly focusing on creating modern web applications.",
+    description: { 
+      en: "Joined the axcira team to work on contract development projects. Mainly focusing on creating modern web applications.", 
+      ja: "axcira というチームに参加し、受託開発プロジェクトに携わっています。主にモダンなWebアプリケーションの開発に注力しています。" 
+    },
     tags: ["Kotlin", "Ktor", "Exposed", "Go", "FastAPI", "Hono", "Tanstack"],
     highlight: true,
   },
   {
-    period: "2nd Year",
-    role: "Web Developer",
-    company: "Industry-Academia Collaboration",
-    description:
-      "Participated in an industry-academia collaboration project and contributed to the development of multiple applications. Additionally, built corporate websites for several companies.",
+    period: { en: "2nd Year", ja: "大学2年" },
+    role: { en: "Web Developer", ja: "Webエンジニア" },
+    company: { en: "Industry-Academia Collaboration", ja: "産学連携プロジェクト" },
+    description: { 
+      en: "Participated in an industry-academia collaboration project and contributed to the development of multiple applications. Additionally, built corporate websites for several companies.", 
+      ja: "産学連携プロジェクトに参加し、複数のアプリケーション開発に貢献しました。また、いくつかの企業のコーポレートサイト構築も行いました。" 
+    },
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Astro"],
     highlight: false,
   },
   {
-    period: "After High School",
-    role: "Self-taught Developer",
-    company: "Personal Project",
-    description:
-      "Independently developed an app to optimize studying using Python and Flask. This experience sparked my deep fascination with programming.",
+    period: { en: "After High School", ja: "高校卒業後" },
+    role: { en: "Self-taught Developer", ja: "独学プログラマー" },
+    company: { en: "Personal Project", ja: "個人開発" },
+    description: { 
+      en: "Independently developed an app to optimize studying using Python and Flask. This experience sparked my deep fascination with programming.", 
+      ja: "学習を最適化するためのアプリを Python と Flask を使って独自に開発しました。この経験がプログラミングに深くのめり込むきっかけとなりました。" 
+    },
     tags: ["Python", "Flask", "Django", "JavaScript"],
     highlight: false,
   },
@@ -33,16 +39,20 @@ const careers = [
 
 const education = [
   {
-    period: "Current",
-    school: "School in Kyoto",
-    description:
-      "Enrolled in a school in Kyoto, primarily studying web application development and computer science.",
+    period: { en: "Current", ja: "現在" },
+    school: { en: "School in Kyoto", ja: "京都の学校" },
+    description: { 
+      en: "Enrolled in a school in Kyoto, primarily studying web application development and computer science.", 
+      ja: "京都の学校に在籍し、主にWebアプリケーション開発とコンピュータサイエンスを学んでいます。" 
+    },
   },
   {
-    period: "Until High School Graduation",
-    school: "High School",
-    description:
-      "Dedicated my time to playing soccer throughout my high school years.",
+    period: { en: "Until High School Graduation", ja: "高校卒業まで" },
+    school: { en: "High School", ja: "高等学校" },
+    description: { 
+      en: "Dedicated my time to playing soccer throughout my high school years.", 
+      ja: "高校時代はサッカーに打ち込む日々を送っていました。" 
+    },
   },
 ];
 ---
@@ -51,11 +61,22 @@ const education = [
   <!-- Hero -->
   <section class="page-hero">
     <div class="container">
-      <span class="section-label reveal">Career</span>
-      <h1 class="section-title reveal">Career & Experience</h1>
+      <span class="section-label reveal">
+        <span class="lang-en">Career</span>
+        <span class="lang-ja">経歴</span>
+      </span>
+      <h1 class="section-title reveal">
+        <span class="lang-en">Career & Experience</span>
+        <span class="lang-ja">経歴と経験</span>
+      </h1>
       <p class="section-subtitle reveal">
-        Here is a look at my background, from my early days of programming to my
-        current role as a web developer.
+        <span class="lang-en">
+          Here is a look at my background, from my early days of programming to my
+          current role as a web developer.
+        </span>
+        <span class="lang-ja">
+          プログラミングを始めた初期の頃から、現在のWebデベロッパーとしての活動に至るまでの経歴をご紹介します。
+        </span>
       </p>
     </div>
   </section>
@@ -63,8 +84,14 @@ const education = [
   <!-- Timeline -->
   <section class="section timeline-section">
     <div class="container">
-      <span class="section-label reveal">Experience</span>
-      <h2 class="section-title reveal">Work Experience</h2>
+      <span class="section-label reveal">
+        <span class="lang-en">Experience</span>
+        <span class="lang-ja">経験</span>
+      </span>
+      <h2 class="section-title reveal">
+        <span class="lang-en">Work Experience</span>
+        <span class="lang-ja">職務経歴</span>
+      </h2>
 
       <div class="timeline">
         {
@@ -81,14 +108,29 @@ const education = [
               </div>
               <div class="timeline-content glass-card">
                 <div class="timeline-header">
-                  <span class="timeline-period">{career.period}</span>
+                  <span class="timeline-period">
+                    <span class="lang-en">{career.period.en}</span>
+                    <span class="lang-ja">{career.period.ja}</span>
+                  </span>
                   {career.highlight && (
-                    <span class="current-badge">Current</span>
+                    <span class="current-badge">
+                      <span class="lang-en">Current</span>
+                      <span class="lang-ja">現在</span>
+                    </span>
                   )}
                 </div>
-                <h3 class="timeline-role">{career.role}</h3>
-                <p class="timeline-company">{career.company}</p>
-                <p class="timeline-desc">{career.description}</p>
+                <h3 class="timeline-role">
+                  <span class="lang-en">{career.role.en}</span>
+                  <span class="lang-ja">{career.role.ja}</span>
+                </h3>
+                <p class="timeline-company">
+                  <span class="lang-en">{typeof career.company === 'string' ? career.company : career.company.en}</span>
+                  <span class="lang-ja">{typeof career.company === 'string' ? career.company : career.company.ja}</span>
+                </p>
+                <p class="timeline-desc">
+                  <span class="lang-en">{career.description.en}</span>
+                  <span class="lang-ja">{career.description.ja}</span>
+                </p>
                 <div class="timeline-tags">
                   {career.tags.map((tag) => (
                     <span class="tag">{tag}</span>
@@ -105,17 +147,32 @@ const education = [
   <!-- Education -->
   <section class="section education-section">
     <div class="container">
-      <span class="section-label reveal">Education</span>
-      <h2 class="section-title reveal">Education</h2>
+      <span class="section-label reveal">
+        <span class="lang-en">Education</span>
+        <span class="lang-ja">学歴</span>
+      </span>
+      <h2 class="section-title reveal">
+        <span class="lang-en">Education</span>
+        <span class="lang-ja">学歴</span>
+      </h2>
 
       <div class="education-grid">
         {
           education.map((edu) => (
             <div class="education-card glass-card reveal">
               <div class="edu-icon">🎓</div>
-              <span class="timeline-period">{edu.period}</span>
-              <h3 class="edu-school">{edu.school}</h3>
-              <p class="edu-desc">{edu.description}</p>
+              <span class="timeline-period">
+                <span class="lang-en">{edu.period.en}</span>
+                <span class="lang-ja">{edu.period.ja}</span>
+              </span>
+              <h3 class="edu-school">
+                <span class="lang-en">{edu.school.en}</span>
+                <span class="lang-ja">{edu.school.ja}</span>
+              </h3>
+              <p class="edu-desc">
+                <span class="lang-en">{edu.description.en}</span>
+                <span class="lang-ja">{edu.description.ja}</span>
+              </p>
             </div>
           ))
         }

@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Home"
-  description="田村優典 - Webデベロッパーのポートフォリオサイト"
+  description="Yusuke Tamura - Web Developer Portfolio / 田村優典 - Webデベロッパーのポートフォリオサイト"
 >
   <!-- Hero Section -->
   <section class="hero" id="hero">
@@ -12,20 +12,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="hero-text">
         <div class="hero-badge reveal">
           <span class="badge-dot"></span>
-          🧑‍🎓 Student & Developer
+          <span class="lang-en">🧑‍🎓 Student & Developer</span>
+          <span class="lang-ja">🧑‍🎓 学生 兼 エンジニア</span>
         </div>
         <h1 class="hero-title reveal">
-          Hi, I'm
-          <span class="gradient-text">Yusuke Tamura</span> 🤓
+          <span class="lang-en">Hi, I'm <br class="mobile-only" /><span class="gradient-text">Yusuke Tamura</span> 🤓</span>
+          <span class="lang-ja">こんにちは、<br class="mobile-only" /><span class="gradient-text">田村優典</span>です 🤓</span>
         </h1>
         <p class="hero-description reveal">
-          CS Student in Kyoto, Japan 🇯🇵 <br />
-          Currently working with axcira 🐬<br />
-          Mainly focusing on web development 💻
+          <span class="lang-en">
+            CS Student in Kyoto, Japan 🇯🇵 <br />
+            Currently working with axcira 🐬<br />
+            Mainly focusing on web development 💻
+          </span>
+          <span class="lang-ja">
+            京都で情報学を専攻している学生です 🇯🇵 <br />
+            現在 axcira というチームで開発を行っています 🐬<br />
+            主にWebアプリケーションの開発に注力しています 💻
+          </span>
         </p>
         <div class="hero-actions reveal">
           <a href="/works" class="btn btn-primary">
-            <span>View Works</span>
+            <span class="lang-en">View Works</span>
+            <span class="lang-ja">制作実績を見る</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path
                 d="M3 8h10M9 4l4 4-4 4"
@@ -35,7 +44,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 stroke-linejoin="round"></path>
             </svg>
           </a>
-          <a href="/career" class="btn btn-secondary">View Career</a>
+          <a href="/career" class="btn btn-secondary">
+            <span class="lang-en">View Career</span>
+            <span class="lang-ja">経歴を見る</span>
+          </a>
         </div>
         <div class="hero-stats reveal">
           <div class="stat">
@@ -86,47 +98,82 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- About Section -->
   <section class="section about-section" id="about">
     <div class="container">
-      <span class="section-label reveal">About Me</span>
-      <h2 class="section-title reveal">About Me</h2>
+      <span class="section-label reveal">
+        <span class="lang-en">About Me</span>
+        <span class="lang-ja">自己紹介</span>
+      </span>
+      <h2 class="section-title reveal">
+        <span class="lang-en">About Me</span>
+        <span class="lang-ja">私について</span>
+      </h2>
       <div class="about-grid">
         <div class="about-content reveal">
           <p class="about-text">
-            I am a student currently attending a school in Kyoto, Japan 🧑‍🎓
+            <span class="lang-en">I am a student currently attending a school in Kyoto, Japan 🧑‍🎓</span>
+            <span class="lang-ja">私は現在、京都の学校に通う学生です 🧑‍🎓</span>
           </p>
           <p class="about-text">
-            I am also working on contract development as part of a team called
-            axcira 🐬. My main focus is on web development, where I enjoy
-            building applications and learning new technologies to hone my
-            skills.
+            <span class="lang-en">
+              I am also working on contract development as part of a team called
+              axcira 🐬. My main focus is on web development, where I enjoy
+              building applications and learning new technologies to hone my
+              skills.
+            </span>
+            <span class="lang-ja">
+              また、「axcira」🐬 というチームで受託開発にも携わっています。
+              主にWebフロントエンド開発に注力しており、新しい技術を学びながら
+              使いやすいアプリケーションを構築することにやりがいを感じています。
+            </span>
           </p>
         </div>
         <div class="about-cards reveal">
           <div class="info-card">
             <div class="info-icon">📍</div>
             <div>
-              <p class="info-label">Location</p>
-              <p class="info-value">Kyoto, Japan 🇯🇵</p>
+              <p class="info-label">
+                <span class="lang-en">Location</span>
+                <span class="lang-ja">居住地</span>
+              </p>
+              <p class="info-value">
+                <span class="lang-en">Kyoto, Japan 🇯🇵</span>
+                <span class="lang-ja">京都府 🇯🇵</span>
+              </p>
             </div>
           </div>
           <div class="info-card">
             <div class="info-icon">🐬</div>
             <div>
-              <p class="info-label">Work</p>
+              <p class="info-label">
+                <span class="lang-en">Work</span>
+                <span class="lang-ja">所属</span>
+              </p>
               <p class="info-value">axcira</p>
             </div>
           </div>
           <div class="info-card">
             <div class="info-icon">🧑‍🎓</div>
             <div>
-              <p class="info-label">Status</p>
-              <p class="info-value">Student</p>
+              <p class="info-label">
+                <span class="lang-en">Status</span>
+                <span class="lang-ja">ステータス</span>
+              </p>
+              <p class="info-value">
+                <span class="lang-en">Student</span>
+                <span class="lang-ja">学生</span>
+              </p>
             </div>
           </div>
           <div class="info-card">
             <div class="info-icon">💻</div>
             <div>
-              <p class="info-label">Focus</p>
-              <p class="info-value">Web Development</p>
+              <p class="info-label">
+                <span class="lang-en">Focus</span>
+                <span class="lang-ja">専門分野</span>
+              </p>
+              <p class="info-value">
+                <span class="lang-en">Web Development</span>
+                <span class="lang-ja">Web開発</span>
+              </p>
             </div>
           </div>
         </div>
@@ -140,20 +187,38 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="quick-grid">
         <a href="/career" class="quick-card glass-card reveal">
           <div class="quick-icon">📋</div>
-          <h3 class="quick-title">Career</h3>
-          <p class="quick-desc">View my background and experience</p>
+          <h3 class="quick-title">
+            <span class="lang-en">Career</span>
+            <span class="lang-ja">経歴</span>
+          </h3>
+          <p class="quick-desc">
+            <span class="lang-en">View my background and experience</span>
+            <span class="lang-ja">これまでの経歴や経験を確認する</span>
+          </p>
           <span class="quick-arrow">→</span>
         </a>
         <a href="/techstack" class="quick-card glass-card reveal">
           <div class="quick-icon">⚡</div>
-          <h3 class="quick-title">Tech Stack</h3>
-          <p class="quick-desc">Check out my technical skills</p>
+          <h3 class="quick-title">
+            <span class="lang-en">Tech Stack</span>
+            <span class="lang-ja">スキル</span>
+          </h3>
+          <p class="quick-desc">
+            <span class="lang-en">Check out my technical skills</span>
+            <span class="lang-ja">習得している技術スタックを見る</span>
+          </p>
           <span class="quick-arrow">→</span>
         </a>
         <a href="/works" class="quick-card glass-card reveal">
           <div class="quick-icon">🎨</div>
-          <h3 class="quick-title">Works</h3>
-          <p class="quick-desc">Explore my past projects</p>
+          <h3 class="quick-title">
+            <span class="lang-en">Works</span>
+            <span class="lang-ja">実績</span>
+          </h3>
+          <p class="quick-desc">
+            <span class="lang-en">Explore my past projects</span>
+            <span class="lang-ja">過去に制作したプロジェクトを見る</span>
+          </p>
           <span class="quick-arrow">→</span>
         </a>
       </div>
@@ -217,10 +282,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .hero-title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 900;
-    line-height: 1.15;
+    line-height: 1.25;
     margin-bottom: 24px;
     letter-spacing: -0.03em;
     color: var(--color-text-primary);
+  }
+  
+  .mobile-only {
+    display: none;
+  }
+  @media (max-width: 480px) {
+    .mobile-only {
+      display: block;
+    }
   }
 
   .hero-description {

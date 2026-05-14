@@ -105,6 +105,14 @@ const currentPath = Astro.url.pathname;
         toggle?.classList.toggle('open');
       });
 
+      // Close mobile menu when a nav link is clicked
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          links?.classList.remove('open');
+          toggle?.classList.remove('open');
+        });
+      });
+
       // Language toggle
       const langToggle = document.getElementById('lang-toggle');
       langToggle?.addEventListener('click', () => {
@@ -675,32 +683,51 @@ const currentPath = Astro.url.pathname;
   @media (max-width: 768px) {
     .nav-toggle {
       display: flex;
+      position: relative;
+      z-index: 1010;
     }
 
     .nav-links {
       position: fixed;
       top: 0;
       right: -100%;
-      width: 260px;
+      width: 280px;
       height: 100vh;
       flex-direction: column;
       background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
-      padding: 100px 32px 32px;
+      padding: 100px 24px 32px;
       gap: 4px;
       transition: right var(--transition-medium);
       border-left: 1px solid var(--color-border);
+      z-index: 1005;
     }
 
     .nav-links.open {
       right: 0;
     }
 
-    .nav-link {
+    .nav-links li {
       width: 100%;
-      padding: 14px 18px;
-      font-size: 1rem;
+    }
+
+    .nav-link {
+      display: block;
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .lang-toggle-btn {
+      display: block;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 16px;
+      padding: 14px 20px;
+      font-size: 1.1rem;
+      text-align: center;
     }
 
     .footer-container {

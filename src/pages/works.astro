@@ -167,7 +167,7 @@ try {
             </div>
             <div class="project-info">
               <h3 class="project-title">{project.title}</h3>
-              <p class="project-desc">{project.description}</p>
+              <p class="project-desc" style="white-space: pre-wrap;">{project.description}</p>
               <div class="project-tags">
                 {(project.tags || "").split(",").map((tag) => (
                   <span class="tag">{tag.trim()}</span>

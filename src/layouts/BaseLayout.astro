@@ -157,11 +157,14 @@ const currentPath = Astro.url.pathname;
     --color-text-secondary: #555580;
     --color-text-muted: #8888aa;
 
-    --color-accent-1: #6c5ce7;
-    --color-accent-2: #00b4a6;
-    --color-accent-3: #e84393;
-    --color-accent-gradient: linear-gradient(135deg, #6c5ce7, #00b4a6);
-    --color-accent-gradient-2: linear-gradient(135deg, #e84393, #6c5ce7);
+    --color-accent-1: #0066ff;
+    --color-accent-1-rgb: 0, 102, 255;
+    --color-accent-2: #00d2c4;
+    --color-accent-2-rgb: 0, 210, 196;
+    --color-accent-3: #00e5ff;
+    --color-accent-3-rgb: 0, 229, 255;
+    --color-accent-gradient: linear-gradient(135deg, #0b3a7d, #00e5ff);
+    --color-accent-gradient-2: linear-gradient(135deg, #00d2c4, #0066ff);
 
     --color-border: rgba(0, 0, 0, 0.08);
     --color-border-hover: rgba(0, 0, 0, 0.15);
@@ -183,7 +186,7 @@ const currentPath = Astro.url.pathname;
 
     /* Shadows */
     --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.06);
-    --shadow-glow: 0 8px 40px rgba(108, 92, 231, 0.1);
+    --shadow-glow: 0 8px 40px rgba(0, 102, 255, 0.1);
 
     /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -413,12 +416,12 @@ const currentPath = Astro.url.pathname;
   .btn-primary {
     background: var(--color-accent-gradient);
     color: white;
-    box-shadow: 0 4px 20px rgba(108, 92, 231, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 102, 255, 0.3);
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(108, 92, 231, 0.45);
+    box-shadow: 0 8px 30px rgba(0, 102, 255, 0.45);
   }
 
   .btn-primary svg {
@@ -459,7 +462,7 @@ const currentPath = Astro.url.pathname;
   .tag:hover {
     border-color: var(--color-accent-1);
     color: var(--color-accent-1);
-    background: rgba(108, 92, 231, 0.06);
+    background: rgba(0, 102, 255, 0.06);
   }
 
   /* ============================================
@@ -541,7 +544,7 @@ const currentPath = Astro.url.pathname;
 
   .nav-link.active {
     color: var(--color-accent-1);
-    background: rgba(108, 92, 231, 0.08);
+    background: rgba(0, 102, 255, 0.08);
   }
 
   .nav-link.active::after {
@@ -575,7 +578,7 @@ const currentPath = Astro.url.pathname;
     color: white;
     border-color: transparent;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
   }
 
   .nav-toggle {

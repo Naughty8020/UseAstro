@@ -1,46 +1,44 @@
-# Astro Starter Kit: Basics
+# Yusuke Tamura | Portfolio
 
-```sh
-bun create astro@latest -- --template basics
-```
+Welcome to the repository for my personal portfolio website, built with [Astro](https://astro.build). 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🔗 **Live Site:** [Your Vercel/Cloudflare URL here]
+🐙 **Repository:** [Naughty8020/UseAstro](https://github.com/Naughty8020/UseAstro)
 
-## 🚀 Project Structure
+## 🚀 Overview
 
-Inside of your Astro project, you'll see the following folders and files:
+This portfolio showcases my projects, skills, and background as a software engineer. It is designed with a focus on a minimalist aesthetic and high performance, leveraging Astro's powerful static site generation.
+
+## 🛠 Tech Stack
+
+* **Framework:** [Astro](https://astro.build/)
+* **Package Manager:** [Bun](https://bun.sh/)
+* **Styling:** *(e.g., Tailwind CSS - add if used)*
+* **UI Components:** *(e.g., React - add if used)*
+* **Deployment:** *(e.g., Vercel / Cloudflare - add if used)*
+
+## 💻 Local Development
+
+To run this project locally, clone the repository and run the following commands from the root directory in your terminal:
+
+| Command | Action |
+| :--- | :--- |
+| `bun install` | Installs dependencies |
+| `bun dev` | Starts local dev server at `localhost:4321` |
+| `bun build` | Builds the production site to `./dist/` |
+| `bun preview` | Previews your build locally before deploying |
+| `bun astro ...` | Runs CLI commands like `astro add`, `astro check` |
+
+## 📁 Project Structure
+
+The project relies on Astro's standard routing and file structure:
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/       # Static assets (fonts, favicons, etc.)
+├── src/
+│   ├── assets/   # Processed image assets
+│   ├── components/ # Reusable UI components
+│   ├── layouts/  # Page layouts and wrappers
+│   └── pages/    # File-based routing (e.g., index.astro)
 └── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
